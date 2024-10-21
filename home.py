@@ -8,9 +8,9 @@ import catboost
 from PIL import Image
 
 # Load Models
-model_extractor = tf.keras.models.load_model('feature_extractor.keras')
+model_extractor = tf.keras.models.load_model('grape_feature_extractor.keras')
 model_classification = catboost.CatBoostClassifier()
-model_classification.load_model('feature_classifier.cbm')
+model_classification.load_model('grape_feature_classifier.cbm')
 
 # Class Names
 class_names = ['Black Rot', 'ESCA', 'Healthy', 'Leaf Blight']
@@ -37,7 +37,7 @@ def predict_image(file, threshold=0.5):
     return img, predicted_labels, predictions
 
 # Streamlit App
-st.title("Image Prediction for Disease Classification")
+st.title("Grape Leaf Disease Classification (WIP)")
 
 st.write("Upload an image to predict its class (Black Rot, ESCA, Healthy, or Leaf Blight).")
 

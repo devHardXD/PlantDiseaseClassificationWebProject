@@ -8,9 +8,9 @@ import tensorflow as tf
 import catboost
 
 # Load Model
-model_extractor = tf.keras.models.load_model('feature_extractor.keras')
+model_extractor = tf.keras.models.load_model('grape_feature_extractor.keras')
 model_classification = catboost.CatBoostClassifier()
-model_classification.load_model('feature_classifier.cbm')
+model_classification.load_model('grape_feature_classifier.cbm')
 
 # Load and predict Image
 def predict_image(filepath, threshold=0.5):
